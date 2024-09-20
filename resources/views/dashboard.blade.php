@@ -6,7 +6,7 @@
             <div class="shadow py-5 bg-light">
                 <div class="card-body text-center">
                     <h5 class="card-title">Available Category's</h5>
-                    <h3 class="mt-3">{{ $activeCategory }}</h3>
+                    <h3 class="mt-3">{{ $activeVideo < 10 ? '0'.$activeVideo : $activeVideo }}</h3>
                 </div>
             </div>
         </div>
@@ -14,7 +14,7 @@
             <div class="shadow py-5 bg-light">
                 <div class="card-body text-center">
                     <h5 class="card-title">Active Blog's</h5>
-                    <h3 class="mt-3">{{ $activeBlog }}</h3>
+                    <h3 class="mt-3">{{ $activeVideo < 10 ? '0'.$activeVideo : $activeVideo }}</h3>
                 </div>
             </div>
         </div>
@@ -22,7 +22,8 @@
             <div class="shadow py-5 bg-light">
                 <div class="card-body text-center">
                     <h5 class="card-title">Published Video's</h5>
-                    <h3 class="mt-3">05</h3>
+                    <h3 class="mt-3">{{ $activeVideo < 10 ? '0'.$activeVideo : $activeVideo }}</h3>
+          
                 </div>
             </div>
         </div>

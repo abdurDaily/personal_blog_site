@@ -67,7 +67,7 @@ class ProfileController extends Controller
     public function signOut()
     {
         auth()->logout();
-        return redirect()->route('login');
+        return redirect()->route('home.index');
     }
 
 

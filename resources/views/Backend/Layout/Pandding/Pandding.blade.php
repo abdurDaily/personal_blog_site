@@ -27,7 +27,7 @@
             
         }
         #pandding h2 {
-            margin: 0 30px;
+            margin: 0 30px 0 0;
             font-size: 40px;
             font-family: "Poppins", sans-serif;
             text-transform: capitalize;
@@ -43,10 +43,14 @@
 </head>
 <body>
     <section id="pandding">
-        <h2>
-            your request has been received. 
-        </h2>
-        <h2>please wait for getting approval of admin.</h2>
+        <div class="container" style="width: 1170px; margin:auto; padding:30px;">
+            <h2>
+                your request has been received. 
+            </h2>
+            <h2>please wait for getting approval of admin.</h2>
+    
+            <a href="{{ route('login') }}" style="border-radius:2px; background: #0000ff81; padding:10px 40px; display:inline-block; color:#fff; text-decoration:none; font-family: Poppins, sans-serif; font-size:18px;">Login</a>
+        </div>
     </section>
 </body>
 </html>
