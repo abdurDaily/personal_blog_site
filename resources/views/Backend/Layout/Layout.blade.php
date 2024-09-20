@@ -31,7 +31,7 @@
 
         <aside class="sidebar-nav-wrapper">
             <div class="navbar-logo">
-              <a href="{{ route('dashboard') }}">
+              <a href="{{ route('dashboard.index') }}">
                 {{-- <h4>DigiViz</h4> --}}
                 <img src="{{ asset('assets/images/logo/logo.svg') }}" alt="logo" />
               </a>

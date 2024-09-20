@@ -1,13 +1,13 @@
 @extends('Backend.Layout.Layout')
 @section('backend_contains')
 @push('search')
-    <div class="header-search d-none d-md-flex">
+    {{-- <div class="header-search d-none d-md-flex">
         <form action="" method="post">
             @csrf
             <input type="text" placeholder="Search..." />
             <button type="submit"><i class="lni lni-search-alt"></i></button>
         </form>
-    </div>
+    </div> --}}
 @endpush
    <div class="row bg-light p-3 shadow">
      <div class="col table-responsive">
@@ -23,7 +23,7 @@
 
             @forelse ($allVideoRecords as $key => $video)
                 <tr>
-                    <td style="border: 1px solid #ccc">{{ ++$key }}</td>
+                    <td style="border: 1px solid #ccc">{{ $key + $allVideoRecords->firstItem()  }}</td>
                     <td style="border: 1px solid #ccc">{{ $video->video_title }}</td>
                     <td style="border: 1px solid #ccc">
                         <div class="btn-group">
@@ -33,11 +33,12 @@
                     </td>
                 </tr>
             @empty
-                
+                <h1>no data found!</h1>
             @endforelse
 
         </table>
 
+        {{ $allVideoRecords->links() }}
      </div>
    </div>
 @endsection

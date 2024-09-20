@@ -43,12 +43,14 @@
 
                 </div>
             </div>
+
+            {{ $allVideos->links() }}
             @empty
 
             <h1>No video found!</h1>
                 
             @endforelse
-                
+            
         </div>
     </div>
 @endsection

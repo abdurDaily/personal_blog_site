@@ -10,7 +10,7 @@ class VideoController extends Controller
 {
     //FETCH ALL VIDEO 
     public function videoFetch(){
-        $allVideos = video::get();
+        $allVideos = video::latest()->simplepaginate(12);
         return view('Frontend.Videos.Index',compact('allVideos'));
     }
 }

@@ -32,7 +32,7 @@ class VideoController extends Controller
 
     //VIDEO LIST 
     public function videoList(){
-     $allVideoRecords = video::select('id','video_title')->latest()->get();
+     $allVideoRecords = video::select('id','video_title')->latest()->simplepaginate(10);
      return view('Backend.Layout.Video.AllVideo', compact('allVideoRecords'));
     }
 

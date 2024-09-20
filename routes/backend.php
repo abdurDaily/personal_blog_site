@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\Approve\ApproveController;
 use App\Http\Controllers\Admin\Blog\BlogController;
 use App\Http\Controllers\Admin\Category\CategoryController;
+use App\Http\Controllers\Admin\Dashboard\DashboardController;
 use App\Http\Controllers\Admin\Profile\ProfileController as ProfileProfileController;
 use App\Http\Controllers\Admin\Video\VideoController;
 use Illuminate\Support\Facades\Route;
@@ -70,5 +71,14 @@ prefix('admin/video/')->name('video.')->group(function () {
     Route::get('edit/{id}', [VideoController::class, 'editVideo'])->name('edit');
     Route::put('update/{id}', [VideoController::class, 'updateVideo'])->name('update');
     Route::get('delete/{id}', [VideoController::class, 'deleteVideo'])->name('delete');
+});
+
+
+/**
+ * DASHBOARD    
+ */
+Route::middleware(['admin', 'verified'])->name('dashboard')->
+prefix('dashboard')->name('dashboard.')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('index');
 });
 require __DIR__.'/auth.php';
